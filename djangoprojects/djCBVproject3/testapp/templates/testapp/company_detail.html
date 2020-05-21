@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CompanyListView</title>
+  </head>
+  <body bgcolor='black' text="red">
+    <center>
+    <h1 style='background:cyan'>All Company Information</h1></center>
+<center>
+     <div style='font-size:30px;font-style:italic;border:10px groove red;background:white;'>
+      <strong style='color:blue'>Company Name   </strong>:{{company.name}}<br>
+      <strong style='color:blue'>Company Location  </strong>:{{company.location}}<br>
+      <strong style='color:blue'>Company CEO   </strong>:{{company.ceo}}
+    </div>
+  </center><br>
+      <hr>
+      {% for emp in company.employees.all %}
+      <div style='font-size:20px;'>
+
+      <ul>
+        <li><strong style='color:cyan'>Employee Number   </strong>:{{emp.eno}}</li>
+        <li><strong style='color:cyan'>Employee Name  </strong>:{{emp.name}}</li>
+        <li><strong style='color:cyan'>Employee Salary  </strong>:{{emp.salary}}</li>
+      </ul>
+    </div>
+      {%endfor%}<hr>
+  </body>
+</html>

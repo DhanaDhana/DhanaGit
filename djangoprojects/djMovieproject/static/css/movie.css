@@ -1,0 +1,24 @@
+ .jumbotron{
+  margin-top:200px;
+  background: red;
+  color:white;
+  border:10px solid cyan;
+}
+  body{
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+img{
+  width:20%;
+  height: 150px;
+  border:10px groove orange;
+}
+table{
+  background: cyan;
+  color: blue;
+  width: 90%
+}
+thead{
+  background: black;
+  color: red;
+}

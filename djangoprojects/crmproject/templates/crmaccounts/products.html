@@ -1,0 +1,57 @@
+{% extends 'crmaccounts/base.html' %}
+<html>
+<head>
+    <title>Products</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+{% block content %}
+    <style>
+    body{
+        background-color: lightblue;
+    }
+    </style>
+<h1 class="bg-success text-white text-center"
+    style="margin-top: 5px; font-family: 'Edwardian Script ITC'">Products Details...</h1>
+
+<div class="container-fluid">
+<div class="row">
+    <div class="col-md">
+        <div class="card">
+            <div clas="card-body">
+                <table class="table text-center table-bordered">
+                    <thead>
+                    <tr class="bg-warning text-white text-center">
+                        <th>Product Name</th>
+                        <th>Product Price</th>
+                        <th>Product Order Date</th>
+                        <th>Product Category</th>
+                        <th>Product Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for product in products %}
+                    <tr class="text-center bg-primary text-white">
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>{{ product.created_date }}</td>
+                    <td>{{ product.category }}</td>
+                    <td>{{ product.description }}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
+</body>
+</html>

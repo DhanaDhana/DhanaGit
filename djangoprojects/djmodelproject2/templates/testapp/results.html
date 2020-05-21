@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body bgcolor='green' text='white'>
+  <font color='red'>  <h1 style='background:cyan;border:3px solid yellow' align='center'>Students Information</h1></font><hr><br><br><hr>
+    {% if students %}
+    <center>  <table border='5'>
+         <thead>
+           <th>id</th>
+          <th>Student NO</th>
+          <th>Student Name</th>
+          <th>Marks</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+          <th>Address</th>
+        </thead>
+        {% for stu in students %}
+          <tr>
+            <td>{{stu.id}}
+            <td>{{stu.rollno}}</td>
+            <td>{{stu.name}}</td>
+            <td>{{stu.marks}}</td>
+            <td>{{stu.phonenumber}}</td>
+            <td>{{stu.email}}</td>
+            <td>{{stu.address}}</td>
+          </tr>
+       {% endfor %}
+          </table></center>s
+        {%else%}
+        <p>No Employee Records Found!!</p>
+    {%endif%}
+  </body>
+</html>

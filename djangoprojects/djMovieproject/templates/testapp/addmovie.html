@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{%static "css/movie.css" %}">
+
+  </head>
+  <body bgcolor='green' text='white' align='center'>
+    <h1 style='color:red;background:yellow'>Add Movie Information</h1><br><hr>
+    <form  method="post">
+      {{form.as_p}}
+      {%csrf_token%}
+      <input type="submit" value="Add Movie">
+    </form><br><hr><br>
+
+<img src="{%static "images/Soundarya.jpeg" %}">&nbsp&nbsp&nbsp&nbsp
+<img src="{%static "images/dhana.jpg" %}">&nbsp&nbsp&nbsp&nbsp
+<img src="{%static "images/Soundarya2.jpeg" %}"><br><hr><br>
+<img style="background:yellow;height:120px;"src="{%static "images/sandhya.jpg" %}">
+
+  </body>
+</html>

@@ -1,0 +1,9 @@
+body{
+  background:red;
+  color:blue;
+  font-size: 30px
+}
+.jumbotron{
+  background:green;
+  color:white;
+}

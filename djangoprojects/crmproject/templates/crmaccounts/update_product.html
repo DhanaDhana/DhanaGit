@@ -1,0 +1,30 @@
+{% extends 'crmaccounts/base.html' %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>l
+</head>
+<body>
+{% block content %}<br><br><br>
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-8">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.management_form }}
+				{% for field in form %}
+					{{field}}
+					<hr>
+				{% endfor %}
+                <center><input class="btn btn-success" type="submit" value="Submit"></center>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

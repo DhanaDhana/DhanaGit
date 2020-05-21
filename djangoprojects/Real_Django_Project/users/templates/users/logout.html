@@ -1,0 +1,11 @@
+{% extends 'Blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <h2>Logged out</h2>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            <h5 class="text-primary">Thanks for spending some quality time with the Web site today.</h5>
+            <a href="{% url 'login' %}" style="font-size: 15px;color: red">Log In Again</a>
+        </small>
+    </div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+{% block content %}
+    <style>
+    #s1,#s2{
+        color: white;
+        font-size: 20px;
+        margin-right: 20px;
+
+    }
+    </style>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<img src="{% static 'images/mypic.jpg' %}" style="width: 3%; height: 3%; border-radius: 50%; margin-right: 10px">
+  <a class="navbar-brand" href="{% url 'home' %}">Dashboard</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'product' %}">Products <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+<span id="s1">Hello, {{ request.user }}</span>
+<span id="s2"><a href="{% url 'logout' %}">Logout</a></span>
+</nav>
+
+{% endblock %}
+</body>
+</html>

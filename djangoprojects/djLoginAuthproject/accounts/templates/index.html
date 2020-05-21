@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Simple Auth System</title>
+  </head>
+  <body bgcolor='green' text='white' align='center'>
+    {% block content %}
+    <h1 style='border:10px solid yellow;background:cyan;color:red'>Welcome @...DHANA......VAISHU...@ HomePage</h1>
+     {% if user.is_authenticated %}
+       <a style="color:white;font-size:20px" href="{% url 'logout' %}">Logout</a><br><br><br>
+       <font  color='red' size=70>
+          <marquee style='background:black;font-style:italic;' behavior='alternata', direction='left',scrollamount'30'>@....Thanks For Visiting...@</marquee></font><br><br>
+          <center><img src="{%static "images/kajal.jpg" %}"  width=300 height=350 border=9></center><br>
+
+      {% else %}
+       <a style="color:white;font-size:20px" href="{% url 'login_url' %}">Login</a>&nbsp&nbsp&nbsp&nbsp
+       <a style="color:white;font-size:20px" href="{% url 'register_url' %}">Register</a><br><br><br>
+       <center><img src="{%static "images/saraswati2.png" %}"></center><br>
+     {% endif %}
+    {% endblock %}
+  </body>
+</html>

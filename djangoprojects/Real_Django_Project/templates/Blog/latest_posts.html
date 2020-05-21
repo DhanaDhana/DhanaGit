@@ -1,0 +1,41 @@
+{% extends 'Blog/base.html' %}
+{% block content %}
+<h1>Recent Posts are:</h1>
+    {% for latest_post in latest_posts %}
+    <ol>
+    <li>Posted by - {{ latest_post.author }}</li>
+    <li>Posted date - {{ latest_post.date_posted|date:'h:i, D d M Y' }}</li>
+    <li>Title Of Post - {{ latest_post.title }} </li>
+    <li>Content of Post - {{ latest_post.content }} </li>
+    </ol>
+        <hr>
+    {% endfor %}
+
+<br><br>
+<table class="table table-bordered table-striped table-sm table-responsive table-dark table-hover">
+    <thead>
+    <tr class="text-center bg-primary">
+        <th>Author</th>
+        <th>Title</th>
+        <th>Date Posted</th>
+        <th>Content</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in latest_posts %}
+        <tr class="text-center">
+        <td>{{ i.author }}</td>
+        <td>{{ i.title }}</td>
+        <td>{{ i.date_posted }}</td>
+        <td>{{ i.content }}</td>
+        <td>
+            <a class="btn btn-success" href="{% url 'post-update' i.id %}">Update</a>
+            <a class="btn btn-danger" href="{% url 'post-delete' i.id %}">Delete</a>
+        </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+    <h1 class="text-center"><a href="{% url 'post-create' %}" class="btn btn-outline-info btn-lg">Create New Post</a></h1>
+{% endblock %}

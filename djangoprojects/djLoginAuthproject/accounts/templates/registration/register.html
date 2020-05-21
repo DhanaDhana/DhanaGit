@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Simple Auth System</title>
+  </head>
+<body bgcolor='green' text='white'>
+  <center>
+<h1 style='border:10px solid yellow;background:cyan;color:red;'>Create New Account </h1>
+</center>
+<form  method="post">
+  {% csrf_token %}
+  {{form.as_p}}
+  <button> Register</button>
+</form>
+</body>
+<html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body bgcolor='blue' text='white' align='center'>
+    <h1>Registration Form</h1><br><br><hr><br>
+    <form class="" action="/show/" method="post">
+      {% csrf_token %}
+      User Name : <input type="text" name="t1" value=""><br><br>
+      User Age : <input type="text" name="t2" value=""><br><br>
+      User Email : <input type="email" name="t3" value=""><br><br>
+      User Address : <input type="text" name="t4" value=""><br><br>
+      <input type="submit" name="" value="Submit">
+    </form>
+  </body>
+</html>

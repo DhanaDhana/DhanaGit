@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{%static "css/movie.css" %}">
+
+  </head>
+  <body bgcolor='green' text='white' align='center'>
+  <h1 style="background:yellow;color:red">Movies Information</h1>
+
+  <img src="{%static "images/Soundarya.jpeg" %}">&nbsp&nbsp&nbsp&nbsp
+  <img src="{%static "images/dhana.jpg" %}">&nbsp&nbsp&nbsp&nbsp
+  <img src="{%static "images/Soundarya2.jpeg" %}">&nbsp&nbsp&nbsp&nbsp
+  <img src="{%static "images/sandhya.jpg" %}"><br><hr>
+
+  {% if movies_list %}
+  <table border=5 align='center'>
+    <thead>
+      <th>Released Date</th>
+      <th>Movie Name</th>
+      <th>Hero</th>
+      <th>Horoine</th>
+      <th>Rating</th>
+      </thead>
+      {% for movie in movies_list%}
+      <tr>
+        <td>{{movie.rdate}}
+          <td>{{movie.moviename}}
+            <td>{{movie.hero}}
+              <td>{{movie.heroine}}
+                <td>{{movie.rating}}
+                  </tr>
+                  {%endfor%}
+  </table>
+  {%else%}
+  <p>No Movies Found</p>
+  {%endif%}
+  </body>
+</html>

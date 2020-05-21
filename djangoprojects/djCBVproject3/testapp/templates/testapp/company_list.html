@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CompanyListView</title>
+  </head>
+  <body bgcolor='black' text="red">
+    <center>
+    <h1 style='background:cyan'>List Of All Companies</h1></center>
+    <ol>
+    {% for company in company_list %}
+   <h2><li><a href="/{{company.id}}"><button style='border:5px solid white;background:cyan;color:red;font-size:30px;font-style:italic'> {{company.name|upper}}</button></a></li></h2>
+
+      {%endfor%}
+  </body>
+</html>

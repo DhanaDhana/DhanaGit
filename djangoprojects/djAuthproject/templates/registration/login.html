@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block body_block%}
+<div class="jumbotron">
+  <div class="container">
+    <h1 style="background:black;text-align:center">***__Welcome to Java Exams__***</h1>
+    <form method="post">
+      {{forms.as_p}}
+      {%csrf_token%}
+      <button type="submit" >Login</button>
+    </form>
+  </div>
+</div>
+{%endblock%}
