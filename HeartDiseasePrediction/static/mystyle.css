@@ -1,0 +1,11 @@
+body{
+background: url("bg1.jpg");
+background-size: cover;
+}
+ul{
+list-style: none;
+}
+ul li a:hover{
+background-color:black;
+color: red;
+}

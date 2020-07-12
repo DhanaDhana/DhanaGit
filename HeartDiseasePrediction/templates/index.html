@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+
+		<style>
+		img{height:140px;
+    		width:140px;
+    		border-radius:200px;
+    		transform:rotate(0deg);transition:8s;
+    		border:3.5px dotted black;
+    		margin-top:-50px;
+			}
+		#dhana:hover{ content: url("/static/sandhya4.jpg");
+						border:3.5px dotted black;
+    		 }
+		</style>
+
+	</head>
+	<body>
+		<div class="login">
+			<h1>Login</h1>
+			<div class="links">
+				<a href="{{ url_for('login') }}" class="active">Login</a>
+				<a href="/adminLogin">Register</a>
+			</div>
+			<form action="{{ url_for('login') }}" method="post">
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="Username" id="username" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="Login">
+			</form>
+		</div>
+		<center><img id="dhana" src="/static/Dhana2.jpg"></center><br>
+
+		<center><a class="btn btn-success" href="/" role='button' ><i><<--Back</i></a></center>
+
+	</body>
+</html>

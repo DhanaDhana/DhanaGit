@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>AdminLogin</title>
+
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+
+		<style>
+			 img{height:70px;
+   			width:70px;
+    		border-radius:200px;
+   			transform:rotate(0deg);transition:8s;
+   			border:2px dashed black;
+   			 }
+		</style>
+
+	</head>
+	<body>
+		<div class="login">
+		<i><h1>AdminLogin</h1></i>
+
+			<center> <img src="/static/Dhana3.jpg"></center>
+
+			<form action="http://127.0.0.1:5000/adminLoginSuccess" method="post">
+
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="AdminName " id="username" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Secrete Key" id="password" required>
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="Login">
+			</form>
+		</div>
+
+		<center><a class="btn btn-success" href="/" role='button' ><i><<--Back</i></a></center>
+
+	</body>
+</html>

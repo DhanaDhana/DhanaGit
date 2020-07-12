@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+
+		<style>
+		.login form input[type="date"],
+		.register form input[type="date"]{
+			width: 310px;
+  			height: 50px;
+  			border: 1px solid #dee0e4;
+			margin-bottom: 20px;
+  			padding: 0 15px;
+  			}
+		</style>
+
+	</head>
+	<body>
+		<div class="register">
+			<h1>Register</h1>
+			<div class="links">
+				<a href="{{ url_for('login') }}">Login</a>
+				<a href="{{ url_for('register') }}" class="active">Register</a>
+			</div>
+			<form action="{{ url_for('register') }}" method="post" autocomplete="off" enctype="multipart/form-data">
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="Username" id="username" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+
+				<label for="email">
+					<i class="fas fa-envelope"></i>
+				</label>
+				<input type="email" name="email" placeholder="Email" id="email" required>
+				<label for="phone">
+					<i class="fas fa-phone"></i>
+				</label>
+				<input type="text" name="phone" placeholder="PhoneNo" id="phone" required>
+
+
+
+				<label for="addr">
+					<i class="fas fa-home"></i>
+				</label>
+				<input type="text" name="addr" placeholder="Address" id="addr" required>
+
+
+				<label for="image">
+					<i class="fas fa-upload"></i>
+				</label>&nbsp&nbsp&nbsp
+				<input id="image" type="file" name="img">
+
+				<div><br>
+
+				<label >Sex</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <input type="radio" id="male" name="gender" value="Male">
+				Male
+				<input type="radio"  name="gender" value="Female">
+				Female
+				<input type="radio" id="other" name="gender" value="Other">
+				Other
+				</div>
+
+				<label for="dob">DOB</label>
+				<input id="dob" type="date"  name="dob" required >
+
+
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="Register">
+			</form>
+		</div>
+	</body>
+</html>

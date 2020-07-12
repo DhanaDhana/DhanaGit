@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MainHome</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='mystyle.css') }}">
+
+      <style>
+      .jumbotron{
+  margin-top:30px;
+  border:13px dotted black;
+}
+    img{height:85px;
+    width:85px;
+    border-radius:200px;
+    transform:rotate(0deg);transition:8s;
+    }
+    #imgs:hover{transform:rotate(1800deg);
+     height:90px;width:90px;}
+     h2{color:red;}
+     h2:hover{color:#00ff00;
+     font-family: myFirstFont;
+     font-size:40px;
+     }
+    .jumbotron:hover{
+        margin-top:30px;
+        background:yellow;
+        color:black;
+        border:15px dotted white;
+}
+    #god:hover{
+                    content: url("/static/siva2.jpg");
+			  }
+</style>
+
+  </head>
+   <body style="background:#276566">
+   <image  id="imgs" src="{{image}}">
+
+         <a style="margin-left:900px;color:white;font-size:22px;" href="/contact">@* Contact Us *@</a></h5>
+       <i> <h5 style="margin-left:1200px;margin-top:-60px;color:white;">@.. PaymentOptions ..@</h5></i>
+         <a style="margin-left:1240px;" href="pay">
+             <img style="height:50px;width:50px;border:1px dotted white;" src="/static/googlepay.png">
+             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <img style="height:50px;width:50px;border:1px dotted white;" src="/static/phonepay.png"> </a>
+
+
+    <center><img id="god" style="height:110px;width:110px;border:4px dotted white;" src="{{image2}}"></center>
+    <div class="container" align="center">
+
+    <div class="jumbotron">
+    <center><img id="imgs" src="{{image3}}"></center><br>
+
+  <i>  <h2>@.... Effective Heart Disease Prediction ....@</h2></i>
+    <p> up to date heart disease information</p>
+    <a class="btn btn-success btn-lg" href="/pythonlogin" role='button'><--Login--></a>&nbsp&nbsp&nbsp
+    <a class="btn btn-success btn-lg" href="/adminLogin" role='button'>Registration</a>
+
+    </div>
+    </div>
+  </body>
+</html>
