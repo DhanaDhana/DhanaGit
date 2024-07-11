@@ -1,0 +1,141 @@
+{% extends 'new_base.html' %}
+{% block main %}
+{% load static %}
+
+    <title>Dashboard</title>
+    <style>
+        body {
+            position: relative;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: lightblue;
+        }
+        .watermark {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('{% static "images/randstad.png" %}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .actions {
+            display: flex;
+            gap: 5px;
+        }
+        .actions a, .actions button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .actions button {
+            display: inline-block;
+        }
+        .actions a:hover, .actions button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <div class="watermark"></div>
+    <div class="content">
+        <h1>Employees</h1>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <form method="get" action="">
+                <input type="text" name="search" placeholder="Search employees..." value="{{ request.GET.search }}">
+                <button type="submit">Search</button>
+            </form>
+            <a href="{% url 'home' %}">
+                <button type="button">Home</button>
+            </a>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Reporting Manager</th>
+                    <th>Location</th>
+                    <th>Date of Joining</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for employee in employees %}
+                    <tr>
+                        <td>{{ employee.emp_id }}</td>
+                        <td>{{ employee.first_name }}</td>
+                        <td>{{ employee.last_name }}</td>
+                        <td>{{ employee.email }}</td>
+                        <td>{{ employee.reporting_manager }}</td>
+                        <td>{{ employee.location }}</td>
+                        <td>{{ employee.date_of_joining }}</td>
+                        <td class="actions">
+                            <a href="{% url 'updateemployee' employee.id %}">Update</a>
+                            <form method="post" action="{% url 'deleteemp' employee.id %}" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit">Delete</button>
+                            </form>
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

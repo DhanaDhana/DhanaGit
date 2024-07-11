@@ -1,0 +1,137 @@
+{% extends 'new_base.html' %}
+{% block main %}
+        <meta charset="UTF-8">
+        <title>Advanced Details</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'style2.css' %}">
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+
+        <div class="container">
+            <h1>Advanced Details</h1>
+            <form id="advancedDetailsForm" method="post" enctype="multipart/form-data" action="/success/">
+                {% csrf_token %}
+                
+                <label for="region">Region: </label>
+                <select id="region" name="region"><br>
+                    {% for region in regions %}
+                        <option value="{{ region }}">{{ region }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <label for="country">Country: </label>
+                <select id="country" name="country"><br>
+                    {% for country in countries %}
+                        <option value="{{ country }}">{{ country }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <label for="bench_classification">Bench Classification: </label>
+                <select id="bench_classification" name="bench_classification"><br>
+                    {% for bench_classification in bench_classifications %}
+                        <option value="{{ bench_classification }}">{{ bench_classification }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <label for="category">Category: </label>
+                <select id="category" name="category"><br>
+                    {% for category in categories %}
+                        <option value="{{ category }}">{{ category }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <label for="sub_category">Sub Category: </label>
+                <select id="sub_category" name="sub_category"><br>
+                    {% for sub_category in sub_categories %}
+                        <option value="{{ sub_category }}">{{ sub_category }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <label for="talent_category">Talent Category: </label>
+                <select id="talent_category" name="talent_category"><br>
+                    {% for talent_category in talent_categories %}
+                        <option value="{{ talent_category }}">{{ talent_category }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <label for="talent_type">Talent Type: </label>
+                <select id="talent_type" name="talent_type"><br>
+                    {% for talent_type in talent_types %}
+                        <option value="{{ talent_type }}">{{ talent_type }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <label for="relocation">Relocation: </label>
+                <select id="relocation" name="talent_type"><br>
+                    {% for relocation in relocations %}
+                        <option value="{{ relocation }}">{{ relocation }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <label for="tm_spoc">TM SPOC: </label>
+                <select id="tm_spoc" name="tm_spoc"><br>
+                    {% for tm_spoc in tm_spocs %}
+                        <option value="{{ tm_spoc }}">{{ tm_spoc }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <label for="sl_poc">SL POC: </label>
+                <select id="sl_poc" name="tm_spoc"><br>
+                    {% for sl_poc in sl_pocs %}
+                        <option value="{{ sl_poc }}">{{ sl_poc }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <label for="profile_available">Profile Available: </label>
+                <select id="profile_available" name="profile_available"><br>
+                    {% for profile_available in profiles %}
+                        <option value="{{ profile_available }}">{{ profile_available }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <label for="action_owner">Action Owner: </label>
+                <select id="action_owner" name="action_owner"><br>
+                    {% for action_owner in action_owners %}
+                        <option value="{{ action_owner }}">{{ action_owner }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <label for="aging_bucket">Aging Bucket: </label>
+                <select id="aging_bucket" name="action_owner"><br>
+                    {% for aging_bucket in aging_buckets %}
+                        <option value="{{ aging_bucket }}">{{ aging_bucket }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <label for="wfo">WFO: </label>
+                <select id="wfo" name="action_owner"><br>
+                    {% for wfo in wfos %}
+                        <option value="{{ wfo }}">{{ wfo }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <label for="assessment_score">Assessment Score: </label>
+                <input type="number" id="assessment_score" name="assessment_score"><br>
+
+                <label for="proficiency_status">Proficiency Status: </label>
+                <select id="proficiency_status" name="proficiency_status"><br>
+                    {% for proficiency in proficiencies %}
+                        <option value="{{ proficiency }}">{{ proficiency }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <label for="experience_level">Experience Level: </label>
+                <select id="experience_level" name="proficiency_status"><br>
+                    {% for experience_level in experience_levels %}
+                        <option value="{{ experience_level }}">{{ experience_level }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <button type="button" onclick="goBack()">Previous</button>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+{% endblock %}

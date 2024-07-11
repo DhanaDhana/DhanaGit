@@ -1,0 +1,58 @@
+{% extends 'new_base.html' %}
+{% block main %}
+    <title>Update Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+        }
+        .content {
+            padding: 20px;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+    <div class="content">
+        <h1>Update Project</h1>
+        <form method="post" action="{% url 'update_project' project.pk %}">
+            {% csrf_token %}
+            <label for="project_name">Project Name:</label>
+            <input type="text" id="project_name" name="project_name" value="{{ project.name }}" required>
+
+            <label for="client">Client:</label>
+            <select id="client" name="client" required>
+                {% for client in clients %}
+                    <option value="{{ client.id }}" {% if project.client.id == client.id %}selected{% endif %}>{{ client.name }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">Update Project</button>
+        </form>
+    </div>
+{% endblock %}
+

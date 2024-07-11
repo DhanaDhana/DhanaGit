@@ -1,0 +1,76 @@
+{% extends 'new_base.html' %}
+{% block main %}
+    <meta charset="UTF-8">
+    <title>Technical Details</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style2.css' %}">
+    <style>
+        body {
+            background-color: lightblue; 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+        }
+        .container {
+            padding: 20px; 
+        }
+    </style>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+    <div class="container">
+        <h1>Technical Details</h1>
+        <form id="technicalform" method="post" action="/recent-project-details/">
+            {% csrf_token %}
+
+            <label for="primary_skill">Primary Skill: </label>
+            <select id="primary_skill_id" name="primary_skill"><br>
+                {% for pskill in primary_skills %}
+                    <option value="{{ pskill }}">{{ pskill }}</option>
+                {% endfor %}
+            </select><br>
+
+            <label for="detailed_skill">Detailed Skill: </label>
+            <input type="text" id="detailed_skill" name="detailed_skill"><br>
+
+            <label for="trained_skill">Trained Skill: </label>
+            <input type="text" id="trained_skill" name="trained_skill"><br>
+
+            <label for="demand_role">Demand Role: </label>
+            <select id="demand_role" name="demand_role"><br>
+                {% for drole in demand_roles %}
+                    <option value="{{ drole }}">{{ drole }}</option>
+                {% endfor %}
+            </select><br>
+
+            <label for="career_role">Career Role: </label>
+            <select id="career_role" name="career_role"><br>
+                {% for crole in career_roles %}
+                    <option value="{{ crole }}">{{ crole }}</option>
+                {% endfor %}
+            </select><br>
+
+            <label for="service_line">Service Line: </label>
+            <select id="service_line" name="service_line"><br>
+                {% for service in service_lines %}
+                    <option value="{{ service }}">{{ service }}</option>
+                {% endfor %}
+            </select><br>
+
+            <label for="sub_service_line">Sub Service Line: </label>
+            <select id="sub_service_line" name="sub_service_line"><br>
+                {% for sub in sub_service_lines %}
+                    <option value="{{ sub }}">{{ sub }}</option>
+                {% endfor %}
+            </select><br>
+
+            <label for="experience">Experience: </label>
+            <input type="number" id="experience" name="experience"><br>
+
+            <button type="button" onclick="goBack()">Previous</button>
+            <button type="submit">Next</button>
+        </form>
+    </div>
+{% endblock %}

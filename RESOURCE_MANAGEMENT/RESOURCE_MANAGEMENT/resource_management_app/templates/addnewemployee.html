@@ -1,0 +1,55 @@
+{% extends 'new_base.html' %}
+{% block main %}
+    <title>Add New Employee</title>
+<style>
+    .my-form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    button[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
+
+    <div class="container">
+        <h1>Add New Employee</h1>
+        <form method="post">
+            {% for field in form %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label_tag }}</label>
+                    {{ field }}
+                </div>
+            {% endfor %}
+            <button type="submit">Submit</button>
+        </form>
+        <a href="{% url 'dashboard' %}" class="home-button">Home</a>
+    </div>
+{% endblock %}
+
+
+

@@ -1,0 +1,185 @@
+{% extends 'new_base.html' %}
+{% block main %}
+{% comment %} <!-- templates/employee_details.html -->
+
+    <meta charset="UTF-8">
+    <title>Employee Details</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    
+<script>
+    // Assuming jQuery is included
+    $(document).ready(function() {
+      $('.full-details-btn').click(function(e) {
+        e.preventDefault(); // Prevent default form submission if applicable
+        // Add custom logic here, e.g., fetch additional data using AJAX
+        console.log('Full details button clicked for employee ID:', $(this).data('employee-id'));
+      });
+    });
+  </script>
+  
+  <a href="{% url 'employee_details' employee.id %}" class="btn btn-primary full-details-btn" data-employee-id="{{ employee.id }}">Full Details</a>
+    <div class="container">
+        <h1>Employee Details</h1>
+        <p><strong>Experience Level:</strong> {{ employee.experience_level }}</p>
+        <p><strong>Date of Joining (DOJ):</strong> {{ employee.doj }}</p>
+        <p><strong>Last Release Date:</strong> {{ employee.last_release_date }}</p>
+        <p><strong>Last Release Account:</strong> {{ employee.last_release_account }}</p>
+        <p><strong>Last Release Industry Group:</strong> {{ employee.last_release_industry_group }}</p>
+        <p><strong>Bench Start Date:</strong> {{ employee.bench_start_date }}</p>
+        <p><strong>Aging:</strong> {{ employee.aging }}</p>
+        <p><strong>Aging Cluster:</strong> {{ employee.aging_cluster }}</p>
+        <p><strong>Bench Classification:</strong> {{ employee.bench_classification }}</p>
+        <p><strong>Category:</strong> {{ employee.category }}</p>
+        <p><strong>Sub Category:</strong> {{ employee.sub_category }}</p>
+        <p><strong>Talent Category:</strong> {{ employee.talent_category }}</p>
+        <p><strong>Talent Type:</strong> {{ employee.talent_type }}</p>
+        <p><strong>Relocation:</strong> {{ employee.relocation }}</p>
+        <p><strong>TM SPOC:</strong> {{ employee.tm_spoc }}</p>
+        <p><strong>SL POC:</strong> {{ employee.sl_poc }}</p>
+        <p><strong>Profile Available:</strong> {{ employee.profile_available }}</p>
+        <p><strong>Action Owner:</strong> {{ employee.action_owner }}</p>
+        <p><strong>Work from Office (WFO):</strong> {{ employee.wfo }}</p>
+        <p><strong>Assessment Score:</strong> {{ employee.assessment_score }}</p>
+        <p><strong>Proficiency Status:</strong> {{ employee.proficiency_status }}</p>
+        <p><strong>Experience Level (Fresher):</strong> {{ employee.experience_level_fresher }}</p>
+    </div>
+</body>
+</html>
+
+
+<script>
+    // Assuming jQuery is included
+    $(document).ready(function() {
+      $('.full-details-btn').click(function(e) {
+        e.preventDefault(); // Prevent default form submission if applicable
+        // Add custom logic here, e.g., fetch additional data using AJAX
+        console.log('Full details button clicked for employee ID:', $(this).data('employee-id'));
+      });
+    });
+  </script>
+  
+  <a href="{% url 'employee_details' employee.id %}" class="btn btn-primary full-details-btn" data-employee-id="{{ employee.id }}">Full Details</a> {% endcomment %}
+
+
+
+
+
+{% comment %} <!-- templates/employee_details.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Details</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Details</h1>
+        <p><strong>Experience Level:</strong> {{ employee.experience_level }}</p>
+        <p><strong>Date of Joining (DOJ):</strong> {{ employee.doj }}</p>
+        <p><strong>Last Release Date:</strong> {{ employee.last_release_date }}</p>
+        <p><strong>Last Release Account:</strong> {{ employee.last_release_account }}</p>
+        <p><strong>Last Release Industry Group:</strong> {{ employee.last_release_industry_group }}</p>
+        <p><strong>Bench Start Date:</strong> {{ employee.bench_start_date }}</p>
+        <p><strong>Aging:</strong> {{ employee.aging }}</p>
+        <p><strong>Aging Cluster:</strong> {{ employee.aging_cluster }}</p>
+        <p><strong>Bench Classification:</strong> {{ employee.bench_classification }}</p>
+        <p><strong>Category:</strong> {{ employee.category }}</p>
+        <p><strong>Sub Category:</strong> {{ employee.sub_category }}</p>
+        <p><strong>Talent Category:</strong> {{ employee.talent_category }}</p>
+        <p><strong>Talent Type:</strong> {{ employee.talent_type }}</p>
+        <p><strong>Relocation:</strong> {{ employee.relocation }}</p>
+        <p><strong>TM SPOC:</strong> {{ employee.tm_spoc }}</p>
+        <p><strong>SL POC:</strong> {{ employee.sl_poc }}</p>
+        <p><strong>Profile Available:</strong> {{ employee.profile_available }}</p>
+        <p><strong>Action Owner:</strong> {{ employee.action_owner }}</p>
+        <p><strong>Work from Office (WFO):</strong> {{ employee.wfo }}</p>
+        <p><strong>Assessment Score:</strong> {{ employee.assessment_score }}</p>
+        <p><strong>Proficiency Status:</strong> {{ employee.proficiency_status }}</p>
+        <p><strong>Experience Level (Fresher):</strong> {{ employee.experience_level_fresher }}</p>
+        <a href="{% url 'employee_details' employee.id %}" class="btn btn-primary full-details-btn" data-employee-id="{{ employee.id }}">Full Details</a>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('.full-details-btn').click(function(e) {
+                e.preventDefault(); // Prevent default form submission if applicable
+                // Add custom logic here, e.g., fetch additional data using AJAX
+                console.log('Full details button clicked for employee ID:', $(this).data('employee-id'));
+            });
+        });
+    </script>
+</body>
+</html> {% endcomment %}
+
+
+
+
+
+
+
+ 
+<!-- employee_details.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Details</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Details</h1>
+        <p><strong>Employee ID:</strong> {{ employee.emp_id }}</p>
+        <p><strong>First Name:</strong> {{ employee.first_name }}</p>
+        <p><strong>Last Name:</strong> {{ employee.last_name }}</p>
+        <p><strong>Email:</strong> {{ employee.email }}</p>
+        <p><strong>Reporting Manager:</strong> {{ employee.reporting_manager }}</p>
+        <p><strong>Location:</strong> {{ employee.location }}</p>
+        <p><strong>Date of Joining:</strong> {{ employee.date_of_joining }}</p>
+        <p><strong>Last Release Account:</strong> {{ employee.last_release_account }}</p>
+        <p><strong>Last Release IG:</strong> {{ employee.last_release_ig }}</p>
+        <p><strong>Last Release Date:</strong> {{ employee.last_release_date }}</p>
+        <p><strong>Updated Resume:</strong> <a href="{{ employee.updated_resume.url }}">Download</a></p>
+        <p><strong>Experience Level:</strong> {{ employee.experience_level }}</p>
+        <p><strong>Date of Joining:</strong> {{ employee.doj }}</p>
+        <p><strong>Last Release Date:</strong> {{ employee.last_release_date }}</p>
+        <p><strong>Last Release Industry Group:</strong> {{ employee.last_release_industry_group }}</p>
+        <p><strong>Bench Start Date:</strong> {{ employee.bench_start_date }}</p>
+        <p><strong>Aging:</strong> {{ employee.aging }}</p>
+        <p><strong>Aging Cluster:</strong> {{ employee.aging_cluster }}</p>
+        <p><strong>Bench Classification:</strong> {{ employee.bench_classification }}</p>
+        <p><strong>Category:</strong> {{ employee.category }}</p>
+        <p><strong>Sub Category:</strong> {{ employee.sub_category }}</p>
+        <p><strong>Talent Category:</strong> {{ employee.talent_category }}</p>
+        <p><strong>Talent Type:</strong> {{ employee.talent_type }}</p>
+        <p><strong>Relocation:</strong> {{ employee.relocation }}</p>
+        <p><strong>TM SPOC:</strong> {{ employee.tm_spoc }}</p>
+        <p><strong>SL POC:</strong> {{ employee.sl_poc }}</p>
+        <p><strong>Profile Available:</strong> {{ employee.profile_available }}</p>
+        <p><strong>Action Owner:</strong> {{ employee.action_owner }}</p>
+        <p><strong>Work From Office:</strong> {{ employee.wfo }}</p>
+        <p><strong>Assessment Score:</strong> {{ employee.assessment_score }}</p>
+        <p><strong>Proficiency Status:</strong> {{ employee.proficiency_status }}</p>
+        <p><strong>Experience Level (Fresher):</strong> {{ employee.experience_level_fresher }}</p>
+    </div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

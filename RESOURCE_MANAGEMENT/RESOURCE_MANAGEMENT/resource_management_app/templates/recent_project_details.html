@@ -1,0 +1,49 @@
+{% extends 'new_base.html' %}
+{% block main %}
+    <meta charset="UTF-8">
+    <title>Recent Project Details</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style2.css' %}">
+    <style>
+        body {
+            background-color: lightblue; 
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+    <div class="container">
+        <h1>Recent Project Details</h1>
+        <form id="recentProjectForm" method="post" enctype="multipart/form-data" action="{% url 'advanced_details' %}">
+
+            {% csrf_token %}
+            
+            <label for="last_release_account">Last Release Account: </label>
+            <select id="last_release_account" name="last_release_account"><br>
+                {% for raccounts in last_release_accounts %}
+                    <option value="{{ raccounts }}">{{ raccounts }}</option>
+                {% endfor %}
+            </select><br>
+
+            <label for="last_release_ig">Last Release IG: </label>
+            <select id="last_release_ig" name="last_release_ig"><br>
+                {% for rigs in last_release_igs %}
+                    <option value="{{ rigs }}">{{ rigs }}</option>
+                {% endfor %}
+            </select><br>
+
+            <label for="last_release_date">Last Release Date: </label>
+            <input type="text" id="last_release_date" name="last_release_date"><br>
+
+            <label for="updated_resume">Demand Role: </label>
+            <input type="file" id="updated_resume" name="updated_resume"><br>
+
+            <button type="button" onclick="goBack()">Previous</button>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}
